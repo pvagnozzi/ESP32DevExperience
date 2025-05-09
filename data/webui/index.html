@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Setup</title>
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wifi-card">
+        <h2 class="mb-4 text-center">WiFi Setup</h2>
+        <form id="wifiForm" method="POST" action="/save">
+            <div class="mb-3">
+                <label for="ssid" class="form-label">Available Networks</label>
+                <select class="form-select" name="ssid" id="ssid" required>
+                    {{SSID_OPTIONS}}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="pass" class="form-label">Password</label>
+                <input type="password" class="form-control" name="pass" id="pass" required autocomplete="off">
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Connect</button>
+        </form>
+    </div>
+
+    <!-- Toast container -->
+    <div class="position-fixed-bottom-end">
+        <div id="toastMsg" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="toastBody">
+                    <!-- Message here -->
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/bootstrap/bootstrap.bundle.min.js"></script>
+    <script>
+        // Show toast with message
+        function showToast(message, isError = false) {
+            const toastEl = document.getElementById('toastMsg');
+            const toastBody = document.getElementById('toastBody');
+            toastBody.textContent = message;
+            toastEl.classList.remove('text-bg-primary', 'text-bg-danger');
+            toastEl.classList.add(isError ? 'text-bg-danger' : 'text-bg-primary');
+            const toast = new bootstrap.Toast(toastEl);
+            toast.show();
+        }
+
+        // Example: Show error if password is empty
+        document.getElementById('wifiForm').addEventListener('submit', function(e) {
+            const pass = document.getElementById('pass').value;
+            if (!pass) {
+                e.preventDefault();
+                showToast('Password is required!', true);
+            }
+        });
+    </script>
+</body>
+</html>

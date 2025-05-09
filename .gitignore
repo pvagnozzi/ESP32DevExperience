@@ -1,0 +1,62 @@
+# PlatformIO
+.pio/
+.vscode/
+*.elf
+*.bin
+*.hex
+*.map
+*.d
+*.o
+*.a
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+.pioenvs/
+.piolibdeps/
+.clangd/
+*.sdf
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Arduino
+*.ino.*
+*.cpp.*
+*.d
+*.dep
+*.elf
+*.hex
+*.bin
+*.eep
+*.map
+*.obj
+*.out
+*.a
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+build/
+*.log
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+*.cmake
+
+# ESP32 specific
+sdkconfig
+sdkconfig.old
+*.partition_table.csv
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Qodo
+.qodo/

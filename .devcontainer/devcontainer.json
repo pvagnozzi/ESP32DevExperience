@@ -1,0 +1,35 @@
+{
+  "name": "ESP32 PlatformIO FreeRTOS DevContainer",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/platformio:1": {},
+    "ghcr.io/devcontainers/features/esp-idf:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/pytest:1": {},
+    "ghcr.io/devcontainers/features/cmake:1": {},
+    "ghcr.io/devcontainers/features/gcc-arm:1": {},
+    "ghcr.io/devcontainers/features/openocd:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "platformio.platformio-ide",
+        "ms-vscode.cpptools",
+        "ms-python.python",
+        "marus25.cortex-debug"
+      ]
+    }
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/src,target=/workspace/src,type=bind",
+    "source=${localWorkspaceFolder}/tests,target=/workspace/tests,type=bind"
+  ],
+  "runArgs": [
+    "--device=/dev/ttyUSB0",
+    "--cap-add=SYS_PTRACE",
+    "--security-opt=seccomp=unconfined"
+  ],
+  "postCreateCommand": "pip install pytest-esp32-idf",
+  "remoteUser": "vscode"
+}
