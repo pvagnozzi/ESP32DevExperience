@@ -33,6 +33,5 @@
 			"espressif.esp-idf-extension",
 			"ms-vscode.test-adapter-converter"
 		]
-	},
-	"remoteAuthority": "dev-container://."
+	}
 }
