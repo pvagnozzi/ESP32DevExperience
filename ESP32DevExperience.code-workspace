@@ -8,30 +8,20 @@
 		"remote.containers.defaultExtensions": [
 			"platformio.platformio-ide",
 			"ms-vscode.cpptools",
-			"ms-python.python",
-			"marus25.cortex-debug"
-		],
-		"platformio-ide.useBuiltinPIOCore": true,
-		"platformio-ide.customPATH": "/workspaces/ESP32DevExperience/.platformio/penv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
-		"platformio-ide.buildFolder": "${workspaceFolder}/build/${buildType}",
-		"platformio-ide.buildType": "Release",
-		"platformio-ide.openOCDConfig": "interface/jlink.cfg,board/esp32-wrover.cfg"
-	},
-	"extensions": {
-		"recommendations": [
-			"platformio.platformio-ide",
-			"ms-vscode.cpptools",
-			"ms-python.python",
-			"marus25.cortex-debug",
+			"ms-python.python",		
 			"ms-vscode.cmake-tools",
 			"ms-vscode.makefile-tools",
 			"ms-vscode.cpptools-extension-pack",
 			"ms-vscode.cpptools-themes",
 			"ms-vscode.vscode-serial-monitor",
 			"ms-vscode.hexeditor",
-			"trond-snekvik.simple-rst",
 			"espressif.esp-idf-extension",
 			"ms-vscode.test-adapter-converter"
-		]
+		],
+		"platformio-ide.useBuiltinPIOCore": true,
+		"platformio-ide.customPATH": "/workspaces/ESP32DevExperience/.platformio/penv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin",
+		"platformio-ide.buildFolder": "${workspaceFolder}/build/${buildType}",
+		"platformio-ide.buildType": "Release",
+		"platformio-ide.openOCDConfig": "interface/jlink.cfg,board/esp32-wrover.cfg"
 	}
 }
